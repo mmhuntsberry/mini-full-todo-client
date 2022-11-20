@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react'
+import {useState} from 'react'
 import axios from 'axios';
 import {Link, useNavigate} from 'react-router-dom';
 
@@ -7,9 +7,6 @@ const Signin = (props) => {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  useEffect(() => {
-    console.log({email, password})
-  }, [email, password])
 
   return (
     <>
@@ -25,7 +22,6 @@ const Signin = (props) => {
               password
             }
           ).then((response) => {
-            console.log(response)
             props.setToken(response.data.token)
           })
 

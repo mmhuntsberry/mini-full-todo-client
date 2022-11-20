@@ -16,9 +16,6 @@ const Todo = (props) => {
     setTodos(response.data.rows)})
   }, [props.token])
 
-  useEffect(() => {
-    console.log(todos)
-  }, [todos])
   return (
     <div className='todo-container'> 
     <CreateTodo token={props.token} user={props.user} setTodos={setTodos} todos={todos}/>

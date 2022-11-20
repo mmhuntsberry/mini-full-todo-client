@@ -1,6 +1,6 @@
-import {useState, useEffect} from 'react'
+import {useState} from 'react'
 import axios from 'axios';
-import {Link, useNavigate} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 
 const Signup = (props) => {
   const [name, setName] = useState("");
@@ -23,9 +23,7 @@ const Signup = (props) => {
               email,
               password
             }
-          ).then((response) => {
-            console.log(response)
-          })
+          )
 
           setName("");
           setEmail("");
