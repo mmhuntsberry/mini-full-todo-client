@@ -17,7 +17,7 @@ const Signup = (props) => {
           e.preventDefault();
 
           axios.post(
-            "https://mini-full-todo-backend.vercel.app/signup", {
+            "https://mini-full-todo-backend-1.vercel.app/signup", {
 
               name,
               email,
