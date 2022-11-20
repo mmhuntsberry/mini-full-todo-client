@@ -1,24 +1,23 @@
-import logo from './logo.svg';
+import {useState} from 'react';
 import './App.css';
+import Signin from './components/Signin';
+import Signup from './components/Signup';
+import Todo from './components/Todo';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
 function App() {
+ const [token, setToken] = useState("");
+ const [user, setUser] = useState(null);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Signin  setToken={setToken}/>}/>
+      <Route path="/signup" element={<Signup />}/>
+      <Route path="/todos" element={<Todo token={token} user={user} setUser={setUser} />}/>
+    </Routes>
+
+    </BrowserRouter>
   );
 }
 
